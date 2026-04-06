@@ -27,6 +27,21 @@ Se filer:
 - `fiken_created_purchase_drafts.csv`
 - `fiken_skipped_purchase_drafts.csv`
 
+### Bilag / vedlegg
+
+Trumf-PDF-er er nå også festet som bilag der vi hadde sikker match mot kortutskriftene.
+
+Se filer:
+
+- `fiken_draft_attachments_uploaded.csv`
+- `fiken_purchase_attachments_uploaded.csv`
+
+Status:
+
+- **51 bilag festet på utkast**
+- **2 bilag festet direkte på allerede godkjente kjøp**
+- **53 av 53 sikre bilag festet**
+
 ### Viktig
 
 Selv om noen rader tidligere var merket som avvik eller ventende kortmatch, er de nå likevel opprettet som utkast fordi du ba om at fakturaene bare skulle inn, og at det er greit at du godkjenner etterpå.

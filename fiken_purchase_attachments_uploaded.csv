@@ -1,0 +1,3 @@
+purchase_id,source,provider,date,amount_usd,pdf,status_code,attachment_location,ok
+11862013769,Cursor,Cursor,2025-06-24,20.00,47000418010029334012.pdf,201,https://api.fiken.no/api/v2/companies/fiskeavisen-daniel-tilrem/purchases/11862013769/attachments,yes
+11862013785,Cursor,Cursor,2025-06-11,101.68,47000418010029334012.pdf,201,https://api.fiken.no/api/v2/companies/fiskeavisen-daniel-tilrem/purchases/11862013785/attachments,yes
