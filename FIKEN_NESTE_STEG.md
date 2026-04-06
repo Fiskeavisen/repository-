@@ -27,23 +27,15 @@ Relevante filer:
 - `claude_2025_billing_reconciled.csv`
 - `fiken_2025_open_items.csv`
 
-### Det viktigste valget du ma ta i Fiken
+### Betalingsbehandling er na avklart
 
-For at jeg skal kunne gjore dette riktig i Fiken ma vi vite **hvordan betalingene skal behandles**:
+Du har avklart at **alt er privat utlegg**.
 
-#### Alternativ A - dette er betalt av foretakets konto/kort
+Det betyr:
 
-Da trenger jeg:
-
-- hvilken **betalingskonto i Fiken** som skal brukes
-- typisk en konto som `1920:...` hvis dette er en registrert bankkonto i Fiken
-
-#### Alternativ B - dette er betalt privat og skal fores som utlegg
-
-Da skal kjopene normalt **ikke** bokfores som betalt fra foretakets bankkonto.
-De bor i stedet fores som **utlegg / privat betalt kostnad**, avhengig av hvordan du forer dette i Fiken.
-
-Dette er det viktigste avklaringspunktet for at importen skal bli riktig.
+- kjopene skal **ikke** bokfores som betalt fra foretakets bankkonto
+- de bor fores som **utlegg / privat betalt kostnad**
+- kjent NOK-belop brukes som kontroll mot det du faktisk har lagt ut privat
 
 ### Det du kan gjore na
 
@@ -56,14 +48,11 @@ Gjor dette:
 2. Opprett en **personlig API-nokkel**
 3. Finn eller bekreft:
    - **company slug** i Fiken
-   - om disse skal fores som:
-     - betalt fra foretakets konto, eller
-     - private utlegg
-   - hvis foretakets konto: hvilken **betalingskonto** i Fiken som skal brukes
 4. Last opp neste kortfaktura for:
    - sene desember-kjop
    - eventuelt eldre januar 2025-kjop
 5. Se gjennom `fiken_2025_open_items.csv`
+6. Bruk `fiken_2025_private_utlegg_ready.csv` som grunnlag for det som allerede er klart
 
 Nar dette er avklart kan jeg lage:
 
@@ -76,12 +65,14 @@ Da er arbeidsflyten:
 
 1. Aapne `cursor_2025_billing_reconciled.csv`
 2. Aapne `claude_2025_billing_reconciled.csv`
-3. For alle rader med `exact_amount_match`:
+3. Aapne `fiken_2025_private_utlegg_ready.csv`
+4. For hver rad i den fila:
    - registrer kjopet i Fiken
-   - bruk USD-belopet som kjopsbelop
-   - bruk kjent NOK-belop som kontroll mot betaling
+   - for betalingen: velg **utlegg / privat betalt**
+   - bruk USD-belopet som leverandorbelop
+   - bruk kjent NOK-belop som kontroll mot hva du faktisk la ut privat
    - legg ved faktura / dokumentasjon hvis du har den
-4. For alle rader i `fiken_2025_open_items.csv`:
+5. For alle rader i `fiken_2025_open_items.csv`:
    - vent til vi har mer data
    - eller avklar refusjon / neste kortfaktura forst
 
@@ -89,12 +80,6 @@ Da er arbeidsflyten:
 
 Den tryggeste og raskeste veien videre er:
 
-1. du svarer pa dette ene sporsmalet:
-   - **Er disse betalingene gjort privat eller fra foretakets egen konto/kort?**
-2. du laster opp neste kortfaktura
-3. jeg lager den endelige Fiken-klare fila for det som er sikkert
-
-Hvis du vil, kan neste steg vaere at jeg lager en **ferdig Fiken-importdraft** for alle de 53 sikre radene, basert pa at du forteller meg om dette er:
-
-- `utlegg`, eller
-- `foretakets konto`
+1. bruk `fiken_2025_private_utlegg_ready.csv` for alle sikre rader
+2. last opp neste kortfaktura
+3. jeg oppdaterer avvikene og lager neste ferdige batch
