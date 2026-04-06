@@ -1,0 +1,6 @@
+group_id,line_no,date,due_date,kind,identifier,supplier_name,supplier_org_number,currency,paid,payment_account,payment_date,payment_amount_nok,account,description,net_amount,vat_amount,vat_type,attachment_path,kid,project_id,notes
+BILAG-0001,1,2025-01-15,2025-01-29,supplier,INV-1001,Example AS,999888777,NOK,true,1920:10001,2025-01-15,,6540,Programvareabonnement,1290.00,0.00,NONE,attachments/cursor-2025-01.pdf,,,
+BILAG-0002,1,2025-01-20,2025-01-20,cash_purchase,RECEIPT-2001,Coffee Shop AS,123456789,NOK,true,1920:10001,2025-01-20,,7140,Mat pa reise,160.00,40.00,HIGH,attachments/receipt-2025-01-20.jpg,,,
+BILAG-0003,1,2025-02-03,2025-02-17,supplier,INV-3001,Teleleverandor AS,111222333,NOK,false,,,,6995,Telefon og data,399.20,99.80,HIGH,attachments/telefaktura-2025-02.pdf,,,
+BILAG-0004,1,2025-02-10,2025-02-24,supplier,INV-4001,Flyselskap AS,444555666,NOK,true,1920:10001,2025-02-10,,7140,Flyreise kundeoppdrag,2500.00,0.00,NONE,attachments/fly-2025-02.pdf,,,
+BILAG-0004,2,2025-02-10,2025-02-24,supplier,INV-4001,Flyselskap AS,444555666,NOK,true,1920:10001,2025-02-10,,7140,Setereservasjon,149.00,0.00,NONE,attachments/fly-2025-02.pdf,,,
